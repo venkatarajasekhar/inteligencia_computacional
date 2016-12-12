@@ -5,22 +5,74 @@
 #include <algorithm>
 using namespace std;
 
+template<VectorClass T> class DeleteVector
+{
+    public:
+    // Overloaded () operator.
+    // This will be called by for_each() function.
+    bool operator()(T TemplateObj) const
+    {
+        // Delete pointer.
+        delete TemplateObj;
+        return 1;
+    }
+};
+gamma::~gamma(){
+//Required the Logic
+}
+weight::~weight(){
+//Required the Logic
+}
 neurona::neurona(int p, value_type gamma): 
-	weight(p+1), gamma(gamma){
+	weight(p+1), 
+        try{
+        gamma(gamma)
+	}catch(...){
+	gamma::~gamma;
+	}
+        {
 	const value_type ratio=0.5;
 	generate_n(
 		&weight[0],
-		weight.size(),
+		try{
+		weight.size()
+		}catch(...){
+		weight::~weight;
+		},
+		try{
 		randomize<value_type>(-ratio,ratio)
+		}catch(...){
+		//Required the Logic
+		}
 	);
 }
 
 int neurona::test(const vector &input, int expect){ 
-	return expect-sign( (weight*input).sum() );
+	const vector input = neurona;
+	try{
+	int RetVal = expect-sign((weight*neurona).sum());
+	}catch(...){
+	//Required the Logic
+	 DeleteVector<VectorClass*>());
+       //Clear the vector 
+         VectorClass.clear();
+         cout<<"\n"<<VectorClass.size();
+         return 0;
+	}
+	return RetVal;
 }
 
 void neurona::train(const vector &input, int expect){
+	try{
 	int error = test(input, expect);
+	}catch)(...){
+	//Required the Logic
+	 DeleteVector<VectorClass*>());
+       //Clear the vector 
+         VectorClass.clear();
+         cout<<"\n"<<VectorClass.size();
+         return 0;
+	}
 	weight += gamma*error*input;
 }
 
